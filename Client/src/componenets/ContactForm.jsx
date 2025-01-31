@@ -1,8 +1,8 @@
-import { useForm, ValidationError } from '@formspree/react';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram   } from '@fortawesome/free-brands-svg-icons';
-// import fetch from 'node-fetch';
+import { sendContact } from "../../utils/allApi"
 
 
 function ContactFormm() {
@@ -13,19 +13,14 @@ function ContactFormm() {
   const collectData = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch("https://portfolio-flame-rho-71.vercel.app/contact", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
+        const response = await axios.post(sendContact, {
+            name,
+            email, 
+            message 
         });
 
-        if (!response.ok) {
-            throw new Error('Failed to send data');
-        }
 
-        const data = await response.json();
+        const data = await response.data;
         console.log(data);
         setName("");
         setEmail("");
@@ -33,15 +28,14 @@ function ContactFormm() {
     } catch (error) {
         console.error('Error:', error);
         alert("Failed to send message. Please try again later.");
+        setName("");
+        setEmail("");
+        setMessage("");
     }
 
 
     };
-  // const data = await result.json;
-  // console.log(data);
-  // localStorage.setItem("contacts",JSON.stringify(data));
-  // console.log(data,'data send Successfully');
-  // // console.log(fetch);
+
 
   
 
