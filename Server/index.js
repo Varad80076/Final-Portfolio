@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db/connection');
 const contact = require('./models/Contact');
-
+require('dotenv').config(); 
 
 const app = express();
 const PORT = 4000;
@@ -23,7 +23,6 @@ app.options('*', cors());  // Enable preflight request handling for all routes
 
 
 connectDB;
-console.log('MongoDB Connected');
 
 app.post("/contact", async (req, res) => {
     console.log("Server is Running");
