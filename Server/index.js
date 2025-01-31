@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db/connection');
-const contact = require('./models/Contact');
+const bodyParser = require('body-parser');
+const sendRouter = require("./Routes/AuthRoute");
 require('dotenv').config(); 
 
 const app = express();
 const PORT = 4000;
+
+// Parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(cors({
@@ -24,17 +28,9 @@ app.options('*', cors());  // Enable preflight request handling for all routes
 
 connectDB;
 
-app.post("/contact", async (req, res) => {
-    console.log("Server is Running");
-    try {
-        let contacts = new contact(req.body);
-        let result = await contacts.save();
-        res.status(201).send(result);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send({ error: "Failed to save contact" });
-    }
-});
+app.use(bodyParser.json());
+
+app.use("/send", sendRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
