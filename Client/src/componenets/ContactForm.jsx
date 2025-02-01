@@ -9,33 +9,45 @@ function ContactFormm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [click, setClick] = useState(false);
 
   const collectData = async (e) => {
     e.preventDefault();
+    if(email === "" || name === "" || message === "") return;
+    setClick(true);
     try {
         const response = await axios.post(sendContact, {
             name,
             email, 
             message 
         });
+       
+    
 
-
-        const data = await response.data;
-        console.log(data);
+        alert("Details sent successfully!")
         setName("");
         setEmail("");
         setMessage("");
+        setClick(false);
     } catch (error) {
         console.error('Error:', error);
         alert("Failed to send message. Please try again later.");
         setName("");
         setEmail("");
         setMessage("");
+        setClick(false);
     }
 
 
     };
-
+  const handleClick = () => {
+    if(email!=""){
+      setClick(true)
+    }else{
+      setClick(false);
+    }
+    
+  }
 
   
 
@@ -88,7 +100,6 @@ function ContactFormm() {
             required
           />
         </div>
-
         <textarea
           name="message"
           className="form-input px-4 py-2  border-gray-700 rounded-md bg-transparent text-white w-full border-[1px] shadow-[0.3px_0.3px_5px_2px_black,-0.9px_-0.9px_5px_0px_white]"
@@ -100,13 +111,16 @@ function ContactFormm() {
           required
         ></textarea>
 
+
         <button
           className="flex flex-wrap float-end bg-[#202022] shadow-[0.5px_0.5px_3px_2px_black,-0.8px_-0.8px_3px_0px_white]  justify-center  text-center  h-10 p-2 px-3 rounded-lg w-fit
           group hover:bg-gradient-to-br hover:from-[#ffdb708b]  transition-opacity duration-100 hover:to-[#4b474768]"
           type="submit"
+          // onClick={()=>{setClick(true)}}
+          disabled ={click}
         >
           <FontAwesomeIcon icon={faTelegram } className='p-1  text-[#1e1b14]' />
-          <span className='text-[#afa014]'>Send Message</span>
+          <span className='text-[#afa014]'> {(click ? "Sending..." : "Send Message")}</span>
         </button>
       </form>
     </section>

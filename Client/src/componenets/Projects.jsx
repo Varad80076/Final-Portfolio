@@ -67,8 +67,8 @@ const Projects = () => {
               key={project.id}
               className="project-item rounded-xl overflow-hidden  duration-300 "
             >
-              <a href="#" className="block ">
-                <figure className="project-img  relative hover:scale-110 transition-transform duration-100 ">
+              <a href="#" className="block no-underline">
+                <figure className="project-img  relative hover:scale-110 transition-transform duration-500 ">
                   <div className="absolute inset-0 flex items-center justify-center rounded-xl  bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 ">
                     <ion-icon
                       name="eye-outline"
@@ -86,10 +86,10 @@ const Projects = () => {
                   
                 </figure>
                 <div className="p-4">
-                  <h3 className="project-title text-xl text-white text-start font-semibold mb-2 transition-transform duration-300 ">
+                  <h3 className="project-title text-xl text-white text-start font-semibold mb-2 transition-transform duration-300 no-underline">
                     {project.title}
                   </h3>
-                  <p className="project-category text-start text-gray-500">
+                  <p className="project-category text-start text-gray-500 no-underline">
                     {project.category}
                   </p>
                 </div>

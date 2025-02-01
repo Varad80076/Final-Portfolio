@@ -36,7 +36,7 @@ const Experience = () => {
         </h2>
       </header>
 
-      <section className=" blog-posts ">
+      <section className=" blog-posts  ">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 ">
           {blogPosts.map((post) => (
             <li
@@ -48,39 +48,52 @@ const Experience = () => {
             >
               {/* Back Side */}
               {visibleCard === post.id && (
-                <div className="front-side sm:p-2 w-full bg-white rounded-lg shadow-md ">
-                  <figure className="project-img">
-                    <img
-                      src={post.imgSrc}
-                      alt={post.alt}
-                      loading="lazy"
-                      className="w-fit h-fit flex flex-wrap object-cover rounded-lg"
-                    />
-                  </figure>
-                
-                </div>
+                <div className="front-side w-full bg-white rounded-lg shadow-md">
+                <figure className="project-img relative">
+                  <img
+                    src={post.imgSrc}
+                    alt={post.alt}
+                    loading="lazy"
+                    className="w-fit h-fit flex flex-wrap object-cover rounded-lg cursor-pointer"
+                  
+                  />
+                  {/* <i
+                    className="fas fa-download absolute top-2 right-2 text-black text-3xl cursor-pointer"
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = post.imgSrc;
+                      link.download = post.alt || "download";
+                      link.click();
+                    }}
+                  ></i> */}
+                </figure>
+              </div>
+              
+              
               )}
 
               {/* Front Side */}
               {visibleCard !== post.id && (
-                <div className="back-side p-4 bg-None h-full w-full text-white rounded-lg shadow-md">
-                  <div className="p-4 flex flex-col justify-between h-full shadow-[0.2px_0.2px_5px_2px_black,-0.8px_-0.8px_5px_0px_white]">
-                  <a href="#" className="block  rounded-lg overflow-hidden  hover:shadow-lg transition-shadow h-full  ">
+                <div className="back-side gap-1 bg-None h-full w-full text-white rounded-lg shadow-md">
+                  <div className="p-3 w-full flex flex-col justify-between h-full shadow-[0.2px_0.2px_5px_2px_black,-0.8px_-0.8px_5px_0px_white] rounded-2xl">
+                  <a href="#" className="block  rounded-lg overflow-hidden  hover:shadow-lg transition-shadow h-full no-underline ">
                 <figure className="project-img  relative hover:scale-110 transition-transform duration-100">
                   <img
                     src={post.imgSrc2}
                     alt={post.alt}
                     loading="lazy"
-                    className="w-full rounded-xl h-56 object-cover bg-[#252526] text-white"
+                    className="w-full rounded-xl h-40 p-[36px] sm:h-56 object-cover bg-[#6f6f706c] text-white sm:p-4 below-sm:p-0 below-sm:h-[90px]"
                   />
                 </figure>
-                <div className="pt-5 ">
-                  <div className="blog-meta flex items-center text-sm text-white mb-2">
-                    <p className="mr-2 font-medium text-gray-300 text-start">{post.category}</p>
-                    <span className="dot w-1 h-1 bg-gray-400 rounded-full mx-2 "></span>
-                    <time dateTime={post.date}>{new Date(post.date).toLocaleDateString()}</time>
-                  </div>
+                
+                <div className="blog-meta w-full flex justify-between items-center text-sm text-white mb-2 pt-1 sm:pt-2">
+                  <p className="font-medium text-gray-300 ">{post.category}</p>
+                      <div className="flex items-center gap-2">
+                         <span className="dot w-1 h-1 bg-gray-400 rounded-full"></span>
+                         <time dateTime={post.date}>{new Date(post.date).toLocaleDateString()}</time>
+                      </div>
                 </div>
+
                   </a>
                     <div>
                       <h3 className="text-lg pt-2 font-semibold text-start">

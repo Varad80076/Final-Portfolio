@@ -52,7 +52,7 @@ I have worked on projects for well-known brands and gained hands-on experience d
           </div>
         </li>
   
-        <li className="flex flex-row service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+        {/* <li className="flex flex-row service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
           <div className="service-icon-box mb-4 m-3">
             <img src="/icon-app.svg" alt="mobile app icon" width="70" className="mx-auto" />
           </div>
@@ -62,7 +62,7 @@ I have worked on projects for well-known brands and gained hands-on experience d
             Professional development of high-quality mobile applications for iOS and Android platforms.
             </p>
           </div>
-        </li>
+        </li> */}
         <li className="flex flex-row service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
           <div className="service-icon-box mb-4 m-3">
             <img src="/UIUx.png" alt="mobile app icon" width="70" className="mx-auto" />
