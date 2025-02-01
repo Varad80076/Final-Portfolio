@@ -16,7 +16,7 @@ function ContactFormm() {
     if(email === "" || name === "" || message === "") return;
     setClick(true);
     try {
-        const response = await axios.post(sendContact, {
+        await axios.post(sendContact, {
             name,
             email, 
             message 
@@ -40,14 +40,7 @@ function ContactFormm() {
 
 
     };
-  const handleClick = () => {
-    if(email!=""){
-      setClick(true)
-    }else{
-      setClick(false);
-    }
-    
-  }
+  
 
   
 

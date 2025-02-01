@@ -1,6 +1,4 @@
-import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTelegram   } from '@fortawesome/free-brands-svg-icons';
+
 
 function About() {
   return (

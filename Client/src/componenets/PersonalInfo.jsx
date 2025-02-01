@@ -1,6 +1,4 @@
-import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SiCodechef } from 'react-icons/si';
 import { faGithub, faInstagram, faLinkedin  } from '@fortawesome/free-brands-svg-icons';
 import {
   faEnvelope,
