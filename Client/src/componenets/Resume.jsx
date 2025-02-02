@@ -70,15 +70,15 @@ transform -translate-x-1/2 w-[2px] sm:h-52 sm:left-1/2  bg-slate-200 z-30'></spa
       </section> */}
 
       {/* Skills Section 1 */}
-      <div className="flex justify-center w-full">
+      <div className="flex justify-center w-full ">
       <section className="skill">
         <h3 className="text-3xl font-bold text-center mb-6 text-white flex justify-start ">My skills</h3>
         
-        <ul className="skills-list grid grid-cols-1 justify-start sm:grid-cols-2 gap-8 w-full">
+        <ul className="skills-list grid grid-cols-1 justify-start sm:grid-cols-2 gap-8 w-full pl-0">
           
-          <li className="justify-start skills-item bg-gray-800 text-white p-6 rounded-lg shadow-lg gap-1">
+          <li className="justify-start skills-item bg-gray-800 text-white p-6 rounded-lg shadow-lg gap-1 w-[290px] sm:w-[300px] lg:w-[400px]">
             {/* Skill 1 */}
-            <div className="title-wrapper flex justify-between items-center mb-1 w-[370px]">
+            <div className="title-wrapper flex justify-between items-center mb-1 ">
               <h5 className="text-lg font-semibold ">Web Developing</h5>
               <data value="60" className="text-lg font-semibold">60%</data>
             </div>
@@ -135,7 +135,7 @@ transform -translate-x-1/2 w-[2px] sm:h-52 sm:left-1/2  bg-slate-200 z-30'></spa
           </li>
           {/* Other skill items */}
 
-          <li className="skills-item bg-gray-800 text-white p-6 rounded-lg shadow-lg gap-1">
+          <li className="skills-item bg-gray-800 text-white p-6 rounded-lg shadow-lg gap-1  w-[290px] sm:w-[300px] lg:w-[400px]">
             {/* Skill 1 */}
             <div className="title-wrapper flex justify-between items-center mb-1">
               <h5 className="text-lg font-semibold">Css</h5>

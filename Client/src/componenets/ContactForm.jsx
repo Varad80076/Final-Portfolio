@@ -46,7 +46,7 @@ function ContactFormm() {
 
   return (
 
-    <article className="  rounded-2xl p-1 sm:p-6 w-[1000px]  shadow-md" data-page="contact">
+    <article className="  rounded-2xl p-1 sm:p-2 w-[1000px]  shadow-md" data-page="contact">
     <header>
       <h2 className="text-3xl font-bold text-white border-b-4 w-28  border-[#af862c] flex justify-start pb-2 mb-4">Contact</h2>
     </header>

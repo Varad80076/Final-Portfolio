@@ -28,7 +28,7 @@ I have worked on projects for well-known brands and gained hands-on experience d
       <ul className=" service-list grid grid-cols-1 sm:grid-cols-2 lg:grid-3 gap-8">
         <li className="flex flex-row  service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
           <div className="service-icon-box mb-4 m-3">
-            <img src="/icon-design (1).svg" alt="design icon" width="80" className="mx-auto" />
+            <img src="/icon-design (1).svg" alt="design icon" width="160" className="mx-auto" />
           </div>
           <div className="service-content-box">
             <h4 className="text-xl font-semibold text-start">Web design</h4>
@@ -40,7 +40,7 @@ I have worked on projects for well-known brands and gained hands-on experience d
   
         <li className=" flex flex-row service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
           <div className="service-icon-box mb-4 m-3">
-            <img src="/icon-dev.svg" alt="Web development icon" width="80" className="mx-auto" />
+            <img src="/icon-dev.svg" alt="Web development icon" width="150" className="mx-auto" />
           </div>
           <div className="service-content-box">
             <h4 className="text-xl font-semibold text-start">Web development</h4>
@@ -63,7 +63,7 @@ I have worked on projects for well-known brands and gained hands-on experience d
         </li> */}
         <li className="flex flex-row service-item bg-gray-800 text-white p-6 rounded-lg shadow-lg">
           <div className="service-icon-box mb-4 m-3">
-            <img src="/UIUx.png" alt="mobile app icon" width="70" className="mx-auto" />
+            <img src="/UIUx.png" alt="mobile app icon" width="110" className="mx-auto" />
           </div>
           <div className="service-content-box">
             <h4 className="text-xl font-semibold text-start">Ui-Ux Desiging </h4>
