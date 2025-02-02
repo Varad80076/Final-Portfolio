@@ -12,9 +12,6 @@ const PORT = 4000;
 app.options('*', cors());  // Enable preflight request handling for all routes
 app.use(cors({
     origin: [
-        // "https://portfolio-varad-theta.vercel.app/contact",
-        // "https://portfolio-varad-theta.vercel.app",
-        // "https://portfolio-varad-4ib9ud8fa.vercel.app",
         process.env.FRONTEND_API_KEY
     ],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods

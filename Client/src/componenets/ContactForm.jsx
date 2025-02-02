@@ -16,27 +16,40 @@ function ContactFormm() {
     if(email === "" || name === "" || message === "") return;
     setClick(true);
     try {
-        await axios.post(sendContact, {
+        const response = await axios.post(sendContact, {
             name,
             email, 
             message 
         });
        
-    
-
-        alert("Details sent successfully!")
-        setName("");
-        setEmail("");
-        setMessage("");
-        setClick(false);
+        if (response.status === 201) {
+          alert("Details sent successfully!");
+          setName("");
+          setEmail("");
+          setMessage("");
+          setClick(false);
+        } else {
+          alert(`Unexpected response status: ${response.status}`);
+        }
     } catch (error) {
-        console.error('Error:', error);
-        alert("Failed to send message. Please try again later.");
-        setName("");
-        setEmail("");
-        setMessage("");
-        setClick(false);
+      console.error("Error:", error);
+    // If error.response.status is 201, treat as success
+    if (error.response && error.response.status === 201) {
+      alert("Details sent successfully!");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      alert("Failed to send message. Please try again later.");
     }
+  }
+  finally{
+      alert("Failed to send message. Please try again later.");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setClick(false);
+  }
 
 
     };
