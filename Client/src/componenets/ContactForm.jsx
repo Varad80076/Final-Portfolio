@@ -20,7 +20,14 @@ function ContactFormm() {
             name,
             email, 
             message 
-        });
+        },
+        {
+          responseType: "text",
+          transformResponse: [(data) => data],
+          // Accept any status so that axios doesn't reject the promise
+          validateStatus: () => true,
+        }
+      );
        
         if (response.status === 201) {
           alert("Details sent successfully!");
