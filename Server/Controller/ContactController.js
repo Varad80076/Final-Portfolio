@@ -7,7 +7,7 @@ const contact = async (req, res) => {
             const { name, email, message } = req.body;
             let contacts = new Contact({name,email,message});
             let result = await contacts.save();
-            res.status(201).send(result);
+            return res.status(201).send(result);
         } catch (err) {
             console.error(err);
             res.status(500).send({ error: "Failed to save contact" });

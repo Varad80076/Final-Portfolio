@@ -12,7 +12,8 @@ const PORT = 4000;
 app.options('*', cors());  // Enable preflight request handling for all routes
 app.use(cors({
     origin: [
-        process.env.FRONTEND_API_KEY
+        process.env.FRONTEND_API_KEY,
+        process.env.FRONTEND_API_KEY2,
     ],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
