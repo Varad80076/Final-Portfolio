@@ -1,10 +1,10 @@
 //mongoose implimentation
 const mongoose = require('mongoose')
 //create Schema
-const contactSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     name: String,
     email: String,
     message: String
 })
 //export Schema
-module.exports = mongoose.model("contact",contactSchema);
+module.exports = mongoose.model("users",userSchema);

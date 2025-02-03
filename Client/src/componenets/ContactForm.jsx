@@ -29,7 +29,7 @@ function ContactFormm() {
         }
       );
        
-        if (response.status === 201) {
+        if (response.status === 201||response.status === 204) {
           alert("Details sent successfully!");
           setName("");
           setEmail("");
@@ -41,7 +41,7 @@ function ContactFormm() {
     } catch (error) {
       console.error("Error:", error);
     // If error.response.status is 201, treat as success
-    if (error.response && error.response.status === 201) {
+    if (error.response && error.response.status === 201|| error.response.status === 204) {
       alert("Details sent successfully!");
       setName("");
       setEmail("");
@@ -50,13 +50,7 @@ function ContactFormm() {
       alert("Failed to send message. Please try again later.");
     }
   }
-  finally{
-      alert("Failed to send message. Please try again later.");
-      setName("");
-      setEmail("");
-      setMessage("");
-      setClick(false);
-  }
+  
 
 
     };
