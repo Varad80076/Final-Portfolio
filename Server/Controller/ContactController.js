@@ -5,8 +5,8 @@ const contact = async (req, res) => {
     console.log("Server is Running");
     try {
             const { name, email, message } = req.body;
-            let contacts = new Contact({name,email,message});
-            let result = await contacts.save();
+            let users = new Contact({name,email,message});
+            let result = await users.save();
             return res.status(201).send(result);
         } catch (err) {
             console.error(err);
