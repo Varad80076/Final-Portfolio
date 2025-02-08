@@ -9,6 +9,7 @@ function ContactFormm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [notification, setNotification] = useState("");
   const [click, setClick] = useState(false);
 
   const collectData = async (e) => {
@@ -30,7 +31,10 @@ function ContactFormm() {
       );
        
         if (response.status === 201||response.status === 204) {
-          alert("Details sent successfully!");
+          setNotification("Details sent successfully!");
+          setTimeout(() => {
+            setNotification(""); // Clear the message after 3 seconds
+         }, 3000);
           setName("");
           setEmail("");
           setMessage("");
@@ -129,6 +133,7 @@ function ContactFormm() {
           <FontAwesomeIcon icon={faTelegram } className='p-1  text-[#1e1b14]' />
           <span className='text-[#afa014]'> {(click ? "Sending..." : "Send Message")}</span>
         </button>
+        <p className='text-gray-500 text-xl absolute left-[350px] '>{(notification)}</p>
       </form>
     </section>
   </article>

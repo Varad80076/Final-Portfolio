@@ -21,13 +21,12 @@ require('dotenv').config();
       html:
     emailType === "VERIFY"
           ? `<div style="font-family: Arial, sans-serif; line-height: 1.6;">
-              <h2>Verify Your Email</h2>
-              <p>Hello,${name}</p>
+            <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="./thankyou.webp" width="360" height="650">
+              <h3>Hello,${name}</h3>
               <p>Thank you for taking the time to connect with me. I truly appreciate your effort and look forward to meaningful interactions. Please don’t hesitate to reach out if there’s anything I can assist you with or discuss further.</p>
               <p>Looking forward to staying in touch.</p>
               <p>Best regards,</p>
               <p>Varad Badgujar</p>
-              <p>If you didn’t request this, you can safely ignore this email.</p>
             </div>`
           : `<div style="font-family: Arial, sans-serif; line-height: 1.6;">
               <h2>Reset Your Password</h2>
