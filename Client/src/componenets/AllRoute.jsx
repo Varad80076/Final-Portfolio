@@ -14,11 +14,13 @@ import Resume from './Resume';
 import Projects from './Projects';
 import Experience from './Experience';
 import ContactForm from './ContactForm';
+import { ToastContainer} from 'react-toastify';
 
 function AllRoute() {
   return (
     <>
     <div className='flex flex-col sm:flex-row bg-grey-500 justify-around gap-3 p-0 rounded-md h-[720px] mt-0 w-full'>
+    <ToastContainer />
       <Sidebar />
       <div id='varad' className='relative flex flex-wrap bg-[#1e1e1f] w-full sm:w-6xl justify-around gap-3 h-[580px] rounded-xl sm:h-[663px] overflow-scroll scrollbar-none border-[#3c3c3c] border-1'>
         {/* NavBar start */}

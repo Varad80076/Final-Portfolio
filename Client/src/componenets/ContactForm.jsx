@@ -3,7 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram   } from '@fortawesome/free-brands-svg-icons';
 import { sendContact } from "../../utils/allApi"
-
+import { toast } from 'react-toastify';
 
 function ContactFormm() {
   const [name, setName] = useState("");
@@ -31,7 +31,7 @@ function ContactFormm() {
       );
        
         if (response.status === 201||response.status === 204) {
-          setNotification("Details sent successfully!");
+          toast.success("Details sent successfully!");
           setTimeout(() => {
             setNotification(""); // Clear the message after 3 seconds
          }, 3000);
@@ -40,23 +40,19 @@ function ContactFormm() {
           setMessage("");
           setClick(false);
         } else {
-          alert(`Unexpected response status: ${response.status}`);
+          toast.warn(`Unexpected response status: ${response.status}`);
         }
     } catch (error) {
-      console.error("Error:", error);
     // If error.response.status is 201, treat as success
     if (error.response && error.response.status === 201|| error.response.status === 204) {
-      alert("Details sent successfully!");
+      toast.success("Details sent successfully!");
       setName("");
       setEmail("");
       setMessage("");
     } else {
-      alert("Failed to send message. Please try again later.");
+      toast.error("Failed to send message. Please try again later.");
     }
   }
-  
-
-
     };
   
 
