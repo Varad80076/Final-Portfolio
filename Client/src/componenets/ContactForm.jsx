@@ -9,7 +9,6 @@ function ContactFormm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [notification, setNotification] = useState("");
   const [click, setClick] = useState(false);
 
   const collectData = async (e) => {
@@ -32,9 +31,7 @@ function ContactFormm() {
        
         if (response.status === 201||response.status === 204) {
           toast.success("Details sent successfully!");
-          setTimeout(() => {
-            setNotification(""); // Clear the message after 3 seconds
-         }, 3000);
+          
           setName("");
           setEmail("");
           setMessage("");
@@ -65,7 +62,7 @@ function ContactFormm() {
       <h2 className="text-3xl font-bold text-white border-b-4 w-28  border-[#af862c] flex justify-start pb-2 mb-4">Contact</h2>
     </header>
 
-    <section className="mapbox mb-6 " data-mapbox>
+    <section className="mapbox mb-6 w-full " data-mapbox>
       <figure>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238404.2020479688!2d75.41061267042319!3d20.99000507589057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd90fa4a1eab90f%3A0x37f67bd21bff0a3c!2sJalgaon%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1732709895981!5m2!1sen!2sin"
@@ -73,12 +70,12 @@ function ContactFormm() {
           height="400"
           loading="lazy"
           title="Google Maps Location"
-          className="rounded-md border filter grayscale invert  w-full flex flex-wrap xl:w-[900px] "
+          className="rounded-md border filter grayscale invert  flex flex-wrap w-full xl:w-[1000px] "
         ></iframe>
       </figure>
     </section>
 
-    <section className="contact-form">
+    <section className="contact-form w-full">
       <h3 className="text-2xl font-bold text-white  flex justify-start pb-2 mb-4">Contact Form</h3>
 
       <form onSubmit={collectData} className="space-y-4">
@@ -129,7 +126,7 @@ function ContactFormm() {
           <FontAwesomeIcon icon={faTelegram } className='p-1  text-[#1e1b14]' />
           <span className='text-[#afa014]'> {(click ? "Sending..." : "Send Message")}</span>
         </button>
-        <p className='text-gray-500 text-xl absolute left-[350px] '>{(notification)}</p>
+        
       </form>
     </section>
   </article>

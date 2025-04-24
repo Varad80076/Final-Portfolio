@@ -27,7 +27,7 @@ connectDB;
 app.use(bodyParser.json());
 app.use(express.json());
 
-app.use("/send", sendRouter);
+app.use("/api", sendRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
